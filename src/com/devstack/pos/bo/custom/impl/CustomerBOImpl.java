@@ -57,6 +57,11 @@ public class CustomerBOImpl implements CustomerBO {
         return list;
     }
 
+    @Override
+    public List<String> loadAllIds() throws SQLException, ClassNotFoundException {
+        return customerDao.loadAllIds();
+    }
+
     private ResponseCustomerDTO toResponseCustomerDTO(Customer customer) {
         if (customer == null) {
             return null;

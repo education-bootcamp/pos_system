@@ -97,4 +97,8 @@ public class DashboardFormController {
     public void openProductFormOnAction(MouseEvent mouseEvent) throws IOException {
         setUi("ProductForm");
     }
+
+    public void openPlaceOrderFormOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("PlaceOrderForm");
+    }
 }

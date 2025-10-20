@@ -13,4 +13,5 @@ public interface CustomerBO {
     public ResponseCustomerDTO getCustomerById(String id) throws SQLException, ClassNotFoundException;
     public List<ResponseCustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException;
     public List<ResponseCustomerDTO> searchCustomers(String searchText) throws SQLException, ClassNotFoundException;
+    public List<String> loadAllIds() throws SQLException, ClassNotFoundException;
 }

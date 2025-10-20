@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="9" />
+    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="10">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_autocomplete_textfield_1_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/auto-complete/javafx-autocomplete-textfield-1.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/OrderBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/OrderBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/PlaceOrderForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/tm/CartTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ac40eac-bd6f-434e-81d9-2eacd37b46eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ac40eac-bd6f-434e-81d9-2eacd37b46eb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pos-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/BOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/CustomerBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/CustomerBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/CustomerBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/controller/DashboardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/DashboardFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/DaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/CustomerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/CustomerDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/db/database-script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/db/database-script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/view/DashboardForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/DashboardForm.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +39,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,12 +54,12 @@
     &quot;assignee&quot;: &quot;education-bootcamp&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/education-bootcamp/pos-system.git&quot;,
-    &quot;accountId&quot;: &quot;19a54e3d-50f6-4eff-ad00-f6a08f6f9b0d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/education-bootcamp/pos_system.git",
+    "accountId": "19a54e3d-50f6-4eff-ad00-f6a08f6f9b0d"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -61,7 +85,7 @@
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/devstack/Desktop/DSMP/Batch-6/pos-system/pos-system/lib/zxing/javase-3.3.0.jar",
+    "last_opened_file_path": "/home/devstack/Desktop/DSMP/Batch-6/pos-system/pos-system/lib/auto-complete/javafx-autocomplete-textfield-1.1.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,6 +111,7 @@
       <recent name="com.devstack.pos.dao.custom.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/auto-complete" />
       <recent name="$PROJECT_DIR$/lib/zxing" />
       <recent name="$PROJECT_DIR$/src/com/devstack/pos/view/images" />
     </key>
@@ -158,6 +183,7 @@
       <workItem from="1760474842972" duration="54000" />
       <workItem from="1760518206349" duration="6295000" />
       <workItem from="1760929125119" duration="12248000" />
+      <workItem from="1760983878912" duration="517000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -239,7 +265,39 @@
       <option name="project" value="LOCAL" />
       <updated>1760946869929</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="10">
+      <option name="closed" value="true" />
+      <created>1760964577866</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1760964577866</updated>
+    </task>
+    <task id="LOCAL-00012" summary="10">
+      <option name="closed" value="true" />
+      <created>1760964652195</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1760964652195</updated>
+    </task>
+    <task id="LOCAL-00013" summary="10">
+      <option name="closed" value="true" />
+      <created>1760964670745</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1760964670745</updated>
+    </task>
+    <task id="LOCAL-00014" summary="10">
+      <option name="closed" value="true" />
+      <created>1760964718173</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1760964718173</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,18 +324,8 @@
     <MESSAGE value="7" />
     <MESSAGE value="8" />
     <MESSAGE value="9" />
-    <option name="LAST_COMMIT_MESSAGE" value="9" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/CustomerBOImpl.java</url>
-          <line>53</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="10" />
+    <option name="LAST_COMMIT_MESSAGE" value="10" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

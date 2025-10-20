@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="context" prefHeight="548.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.PlaceOrderFormController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backToWindowOnAction" text="&lt;- Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="lblHeader" layoutX="96.0" layoutY="13.0" text="Place Order (Order Id: #1)" textFill="#830000">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="891.0" layoutY="14.0" mnemonicParsing="false" onAction="#newOrderOnAction" style="-fx-background-color: #1F3E1E;" text="+ New Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Separator layoutX="14.0" layoutY="52.0" prefHeight="0.0" prefWidth="972.0" />
+      <Label layoutX="14.0" layoutY="63.0" text="Customer Details" textFill="#101942">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbCustomerIds" layoutX="14.0" layoutY="90.0" prefHeight="29.0" prefWidth="221.0" />
+      <TextField fx:id="txtName" layoutX="242.0" layoutY="90.0" prefHeight="29.0" prefWidth="162.0" promptText="Customer Name" />
+      <TextField fx:id="txtSalary" layoutX="411.0" layoutY="90.0" prefHeight="29.0" prefWidth="162.0" promptText="Customer Salary" />
+      <TextField fx:id="txtAddress" layoutX="582.0" layoutY="90.0" prefHeight="29.0" prefWidth="404.0" promptText="Customer Address" />
+      <Label layoutX="14.0" layoutY="135.0" text="Product Details" textFill="#101942">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDescription" layoutX="242.0" layoutY="162.0" prefHeight="29.0" prefWidth="307.0" promptText="Product Description" />
+      <TextField fx:id="txtUnitPrice" layoutX="561.0" layoutY="162.0" prefHeight="29.0" prefWidth="162.0" promptText="Unit Price" />
+      <TextField fx:id="txtQtyOnHand" layoutX="732.0" layoutY="162.0" prefHeight="29.0" prefWidth="255.0" promptText="QTY On Hand" />
+      <TextField fx:id="txtQty" layoutX="732.0" layoutY="208.0" prefHeight="29.0" prefWidth="146.0" promptText="QTY" />
+      <Button layoutX="891.0" layoutY="209.0" mnemonicParsing="false" onAction="#addToCartOnAction" style="-fx-background-color: #1F3E1E;" text="+ Add to cart" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tblProducts" layoutX="14.0" layoutY="254.0" prefHeight="200.0" prefWidth="979.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="#Id" />
+          <TableColumn fx:id="colDescription" prefWidth="275.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="154.0" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="157.0" text="QTY" />
+            <TableColumn fx:id="colTotal" prefWidth="184.0" text="Total" />
+            <TableColumn fx:id="colTools" prefWidth="133.0" text="Tools" />
+        </columns>
+      </TableView>
+      <Label fx:id="lblTotal" layoutX="14.0" layoutY="465.0" text="Total Cost : 0/=" textFill="#830000">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="884.0" layoutY="467.0" mnemonicParsing="false" onAction="#placeOrderOnAction" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: #0652DD;" text="Place Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtProductCodes" layoutX="14.0" layoutY="162.0" prefHeight="29.0" prefWidth="221.0" promptText="Description, QR" />
+   </children>
+</AnchorPane>

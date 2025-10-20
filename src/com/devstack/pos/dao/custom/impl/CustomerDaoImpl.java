@@ -22,6 +22,16 @@ public class CustomerDaoImpl implements CustomerDao {
     }
 
     @Override
+    public List<String> loadAllIds() throws SQLException, ClassNotFoundException {
+        ResultSet set = CrudUtil.execute("SELECT customer_id FROM customer");
+        List<String> ids = new ArrayList<>();
+        while (set.next()) {
+            ids.add(set.getString("customer_id"));
+        }
+        return ids;
+    }
+
+    @Override
     public boolean save(Customer customer) throws SQLException, ClassNotFoundException {
         return CrudUtil.execute("INSERT INTO customer VALUES(?,?,?,?)", customer.getId(), customer.getName(), customer.getSalary(), customer.getAddress());
     }
