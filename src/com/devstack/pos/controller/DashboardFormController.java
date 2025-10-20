@@ -109,4 +109,8 @@ public class DashboardFormController {
     public void openStatisticsPageOnAction(MouseEvent mouseEvent) throws IOException {
         setUi("StatisticsForm");
     }
+
+    public void openBackupFormOnAction(MouseEvent mouseEvent) throws IOException {
+        setUi("BackupForm");
+    }
 }

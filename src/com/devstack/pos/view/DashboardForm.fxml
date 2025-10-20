@@ -78,12 +78,12 @@
             <Label layoutX="117.0" layoutY="27.0" text="Statistics" textFill="WHITE" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="145.0" fitWidth="288.0" layoutX="624.0" layoutY="262.0" pickOnBounds="true">
+      <ImageView fitHeight="145.0" fitWidth="288.0" layoutX="624.0" layoutY="262.0" onMouseClicked="#openBackupFormOnAction" pickOnBounds="true">
          <image>
             <Image url="@images/dashboard/backup.jpg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="624.0" layoutY="334.0" prefHeight="72.0" prefWidth="288.0" style="-fx-background-color: #130F40; -fx-opacity: 0.8;">
+      <AnchorPane layoutX="624.0" layoutY="334.0" onMouseClicked="#openBackupFormOnAction" prefHeight="72.0" prefWidth="288.0" style="-fx-background-color: #130F40; -fx-opacity: 0.8;">
          <children>
             <Label layoutX="118.0" layoutY="27.0" text="Backups" textFill="WHITE" />
          </children>
