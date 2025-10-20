@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="519.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.ProductController">
+   <children>
+      <Label layoutX="99.0" layoutY="15.0" text="Product Management" textFill="#9a0000">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Separator layoutX="10.0" layoutY="56.0" prefHeight="2.0" prefWidth="953.0" />
+      <Button layoutX="855.0" layoutY="18.0" mnemonicParsing="false" onAction="#newProductOnAction" style="-fx-background-color: #0652DD;" text="+ New Product" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="14.0" layoutY="19.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="26.0" prefWidth="74.0" text="&lt;- Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="811.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/bell.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="823.0" layoutY="16.0" prefHeight="13.0" prefWidth="23.0" style="-fx-background-color: #510353; -fx-border-radius: 50px; -fx-background-radius: 50px;">
+         <children>
+            <Label fx:id="lblQty" alignment="CENTER" layoutX="-1.0" prefHeight="15.0" prefWidth="25.0" textFill="WHITE">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="txtDescription" layoutX="14.0" layoutY="86.0" prefHeight="31.0" prefWidth="283.0" promptText="Product Description">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtUnitPrice" layoutX="309.0" layoutY="86.0" promptText="Unit Price">
+         <font>
+            <Font size="15.0"/>
+         </font>
+      </TextField>
+      <TextField fx:id="txtQtyOnHand" layoutX="506.0" layoutY="86.0" prefHeight="31.0" prefWidth="251.0" promptText="QTY On Hand">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnSaveUpdate" layoutX="777.0" layoutY="86.0" mnemonicParsing="false" onAction="#saveUpdateOnAction" prefHeight="31.0" prefWidth="186.0" style="-fx-background-color: #0652DD;" text="Save Product" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtSearch" layoutX="14.0" layoutY="132.0" prefHeight="31.0" prefWidth="953.0" promptText="Search by (name, code, QR)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="tblProducts" layoutX="14.0" layoutY="176.0" prefHeight="330.0" prefWidth="953.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="#Id" />
+          <TableColumn fx:id="colDescription" prefWidth="294.0" text="Description" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="103.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="132.0" text="QTY On Hand" />
+            <TableColumn fx:id="colQRAv" prefWidth="117.0" text="QR Availability" />
+            <TableColumn fx:id="colTools" prefWidth="231.0" text="Tools" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

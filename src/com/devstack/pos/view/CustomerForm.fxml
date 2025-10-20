@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="context" prefHeight="519.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.devstack.pos.controller.CustomerFormController">
+   <children>
+      <Button layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#backToScreenOnAction" text="&lt;-- Back">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="107.0" layoutY="21.0" text="Customer Management" textFill="#b50000">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button layoutX="858.0" layoutY="22.0" mnemonicParsing="false" onAction="#newCustomerOnAction" style="-fx-background-color: #0652DD;" text="+ New Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Separator layoutX="24.0" layoutY="70.0" prefHeight="0.0" prefWidth="968.0" />
+      <TextField fx:id="txtName" layoutX="24.0" layoutY="84.0" prefHeight="31.0" prefWidth="227.0" promptText="Customer name">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtSalary" layoutX="263.0" layoutY="84.0" prefHeight="31.0" prefWidth="227.0" promptText="Salary">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAddress" layoutX="503.0" layoutY="84.0" prefHeight="31.0" prefWidth="296.0" promptText="Address">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnSave" layoutX="815.0" layoutY="84.0" mnemonicParsing="false" onAction="#saveUpdateOnAction" prefHeight="30.0" prefWidth="177.0" style="-fx-background-color: #0652DD;" text="Save Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtSearch" layoutX="24.0" layoutY="128.0" prefHeight="31.0" prefWidth="968.0" promptText="Search customer by name, address">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </TextField>
+      <TableView fx:id="tblCustomers" layoutX="24.0" layoutY="179.0" prefHeight="323.0" prefWidth="968.0">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="75.0" text="#Id" />
+          <TableColumn fx:id="colName" prefWidth="221.0" text="Name" />
+            <TableColumn fx:id="colSalary" prefWidth="213.0" text="Salary" />
+            <TableColumn fx:id="colAddress" prefWidth="230.0" text="Address" />
+            <TableColumn fx:id="colTools" prefWidth="228.0" text="Tools" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

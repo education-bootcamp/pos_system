@@ -1,0 +1,40 @@
+<component name="libraryTable">
+  <library name="javafx-swt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx-swt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.base.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.controls.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.fxml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.graphics.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.media.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.swing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/fx/javafx.web.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+      <root url="file://$PROJECT_DIR$/lib/fx" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
