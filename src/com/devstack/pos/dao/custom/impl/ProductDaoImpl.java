@@ -30,6 +30,15 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public Product findById(String s) throws SQLException, ClassNotFoundException {
+       ResultSet set = CrudUtil.execute("SELECT * FROM product WHERE product_id=?", s);
+       if(set.next()){
+           return new  Product(
+                   set.getString(1),
+                   set.getString(2),
+                   set.getDouble(3),
+                   set.getInt(4), set.getBytes(5)
+           );
+       }
         return null;
     }
 

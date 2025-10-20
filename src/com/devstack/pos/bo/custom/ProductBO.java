@@ -11,6 +11,7 @@ import java.util.List;
 
 public interface ProductBO {
     public boolean createProduct(RequestProductDTO product) throws IOException, WriterException, SQLException, ClassNotFoundException;
+    public ResponseProductDTO findById(String id) throws IOException, WriterException, SQLException, ClassNotFoundException;
     public List<ResponseProductDTO> loadAllProducts() throws IOException, WriterException, SQLException, ClassNotFoundException;
     public long fillableCount() throws SQLException, ClassNotFoundException;
 }

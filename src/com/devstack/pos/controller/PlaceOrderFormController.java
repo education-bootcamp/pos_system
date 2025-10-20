@@ -3,15 +3,20 @@ package com.devstack.pos.controller;
 import com.devstack.pos.bo.BOFactory;
 import com.devstack.pos.bo.custom.CustomerBO;
 import com.devstack.pos.bo.custom.OrderBO;
+import com.devstack.pos.bo.custom.ProductBO;
 import com.devstack.pos.dto.response.ResponseCustomerDTO;
+import com.devstack.pos.dto.response.ResponseProductDTO;
 import com.devstack.pos.util.BoType;
 import com.devstack.pos.view.tm.CartTM;
+import com.google.zxing.WriterException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -38,19 +43,49 @@ public class PlaceOrderFormController {
 
     private final OrderBO orderBO = BOFactory.getInstance().getBo(BoType.ORDER);
     private final CustomerBO customerBO = BOFactory.getInstance().getBo(BoType.CUSTOMER);
+    private final ProductBO productBO = BOFactory.getInstance().getBo(BoType.PRODUCT);
+
+    private double fullTotal = 0;
 
     public void initialize() {
+
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("total"));
+        colTools.setCellValueFactory(new PropertyValueFactory<>("btn"));
+
         disableFields();
         setOrderId();
         setCustomerIds();
 
 
         cmbCustomerIds.valueProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue != null) {
+            if (newValue != null) {
                 setCustomerDetails(newValue);
             }
         });
 
+        txtProductCodes.textProperty().addListener((observable, oldValue, newValue) -> {
+            setProductDetails(newValue);
+        });
+
+    }
+
+    private void setProductDetails(String id) {
+        try {
+            ResponseProductDTO responseProductDTO = productBO.findById(id);
+            System.out.println(responseProductDTO);
+            if (responseProductDTO == null) {
+                return;
+            }
+            txtDescription.setText(responseProductDTO.getDescription());
+            txtQtyOnHand.setText(String.valueOf(responseProductDTO.getQtyOnHand()));
+            txtUnitPrice.setText(String.valueOf(responseProductDTO.getUnitPrice()));
+        } catch (SQLException | ClassNotFoundException | IOException | WriterException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void disableFields() {
@@ -66,7 +101,7 @@ public class PlaceOrderFormController {
     private void setCustomerDetails(String newValue) {
         try {
             ResponseCustomerDTO selectedCustomer = customerBO.getCustomerById(newValue);
-            if(selectedCustomer == null) {
+            if (selectedCustomer == null) {
                 new Alert(Alert.AlertType.WARNING, "Customer Not Found!", ButtonType.OK).show();
                 return;
             }
@@ -79,7 +114,7 @@ public class PlaceOrderFormController {
     }
 
     private void setCustomerIds() {
-        try{
+        try {
             List<String> ids = customerBO.loadAllIds();
             ObservableList<String> list = FXCollections.observableArrayList(ids);
             cmbCustomerIds.setItems(list);
@@ -89,9 +124,9 @@ public class PlaceOrderFormController {
     }
 
     private void setOrderId() {
-        try{
+        try {
             int lastOrderId = orderBO.findLastOrderId();
-            lblHeader.setText("Place Order (Order Id: #"+ ++lastOrderId+")");
+            lblHeader.setText("Place Order (Order Id: #" + ++lastOrderId + ")");
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -104,6 +139,58 @@ public class PlaceOrderFormController {
     }
 
     public void addToCartOnAction(ActionEvent actionEvent) {
+        int qty = Integer.parseInt(txtQty.getText());
+        int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
+
+        if (qtyOnHand < qty) {
+            new Alert(Alert.AlertType.WARNING, "please fill the stock").show();
+            return;
+        }
+
+        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
+        Button btn = new Button("Remove");
+
+        CartTM tm = new CartTM(txtProductCodes.getText(),
+                txtDescription.getText(),
+                unitPrice, qty, unitPrice * qty, btn);
+
+        btn.setOnAction(e -> {
+            for (CartTM t : tms){
+                if(t.getId().equals(tm.getId())){
+                    tms.remove(t);
+                    manageTotal();
+                    return;
+                }
+            }
+        });
+
+        addToTable(tm);
+        manageTotal();
+    }
+
+    private void manageTotal() {
+        fullTotal = 0;
+        for (CartTM tm : tblProducts.getItems()) {
+            fullTotal += tm.getTotal();
+        }
+        lblTotal.setText(String.format("Total Cost : %.2f/=", fullTotal));
+    }
+
+    ObservableList<CartTM> tms = FXCollections.observableArrayList();
+
+    private void addToTable(CartTM tm) {
+        for (CartTM ctm : tms) {
+            if (ctm.getId().equals(tm.getId())) {
+                ctm.setQty(ctm.getQty() + tm.getQty());
+                ctm.setTotal(ctm.getQty() * tm.getUnitPrice());
+                tblProducts.refresh();
+                return;
+            }
+        }
+
+        tms.add(tm);
+        tblProducts.setItems(tms);
+
     }
 
     public void placeOrderOnAction(ActionEvent actionEvent) {

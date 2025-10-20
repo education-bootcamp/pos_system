@@ -4,30 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="10">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/javafx_autocomplete_textfield_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/auto-complete/javafx-autocomplete-textfield-1.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/OrderBO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/OrderBOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/PlaceOrderForm.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/tm/CartTM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ac40eac-bd6f-434e-81d9-2eacd37b46eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ac40eac-bd6f-434e-81d9-2eacd37b46eb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/data_source_mapping.xml" afterDir="false" />
+    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pos-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pos-system.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/BOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/CustomerBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/CustomerBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/CustomerBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/CustomerBOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/controller/DashboardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/DashboardFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/DaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/CustomerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/CustomerDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/db/database-script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/db/database-script.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/view/DashboardForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/DashboardForm.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/ProductBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/ProductBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/ProductBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/ProductBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/view/tm/CartTM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/tm/CartTM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +166,7 @@
       <workItem from="1760474842972" duration="54000" />
       <workItem from="1760518206349" duration="6295000" />
       <workItem from="1760929125119" duration="12248000" />
-      <workItem from="1760983878912" duration="517000" />
+      <workItem from="1760983878912" duration="3287000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -297,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760964718173</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="11">
+      <option name="closed" value="true" />
+      <created>1760984537811</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1760984537812</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +316,8 @@
     <MESSAGE value="8" />
     <MESSAGE value="9" />
     <MESSAGE value="10" />
-    <option name="LAST_COMMIT_MESSAGE" value="10" />
+    <MESSAGE value="11" />
+    <option name="LAST_COMMIT_MESSAGE" value="11" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

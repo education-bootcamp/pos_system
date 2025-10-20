@@ -3,7 +3,7 @@ package com.devstack.pos.view.tm;
 import javafx.scene.control.Button;
 
 public class CartTM {
-    private int id;
+    private String id;
     private String description;
     private double unitPrice;
     private int qty;
@@ -13,7 +13,7 @@ public class CartTM {
     public CartTM() {
     }
 
-    public CartTM(int id, String description, double unitPrice, int qty, double total, Button btn) {
+    public CartTM(String id, String description, double unitPrice, int qty, double total, Button btn) {
         this.id = id;
         this.description = description;
         this.unitPrice = unitPrice;
@@ -22,11 +22,11 @@ public class CartTM {
         this.btn = btn;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

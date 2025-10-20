@@ -36,6 +36,17 @@ public class ProductBOImpl implements ProductBO {
     }
 
     @Override
+    public ResponseProductDTO findById(String id) throws IOException, WriterException, SQLException, ClassNotFoundException {
+        Product byId = productDao.findById(id);
+        if(byId == null){
+            return null;
+        }
+        return new ResponseProductDTO(
+                byId.getProductId(),byId.getDescription(), byId.getUnitPrice(), byId.getQtyOnHand(), byId.getQr()
+        );
+    }
+
+    @Override
     public List<ResponseProductDTO> loadAllProducts() throws IOException, WriterException, SQLException, ClassNotFoundException {
         List<ResponseProductDTO> list = new ArrayList<>();
         for(Product p : productDao.findAll()){
