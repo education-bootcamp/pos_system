@@ -1,5 +1,6 @@
 package com.devstack.pos.dao.custom.impl;
 
+import com.devstack.pos.dao.CrudDao;
 import com.devstack.pos.dao.CrudUtil;
 import com.devstack.pos.dao.custom.ProductDao;
 import com.devstack.pos.entity.Product;
@@ -67,5 +68,10 @@ public class ProductDaoImpl implements ProductDao {
             return set.getLong(1);
         }
         return 0;
+    }
+
+    @Override
+    public boolean updateQty(String productId, int qty) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("UPDATE product SET qty_on_hand=(qty_on_hand-?) WHERE product_id=?", qty, productId);
     }
 }

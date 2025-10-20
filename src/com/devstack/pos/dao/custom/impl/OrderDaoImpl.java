@@ -2,6 +2,7 @@ package com.devstack.pos.dao.custom.impl;
 
 import com.devstack.pos.dao.CrudUtil;
 import com.devstack.pos.dao.custom.OrderDao;
+import com.devstack.pos.dto.request.RequestOrderDTO;
 import com.devstack.pos.entity.Order;
 
 import java.sql.ResultSet;
@@ -16,6 +17,12 @@ public class OrderDaoImpl implements OrderDao {
             return set.getInt("order_id");
         }
         return 0;
+    }
+
+    @Override
+    public boolean createOrder(RequestOrderDTO dto) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("INSERT INTO orders VALUES (?,?,?,?)",
+                dto.getOrderId(), dto.getCustomerId(), dto.getTotalCost(), dto.getDate());
     }
 
     @Override

@@ -4,6 +4,8 @@ import com.devstack.pos.bo.BOFactory;
 import com.devstack.pos.bo.custom.CustomerBO;
 import com.devstack.pos.bo.custom.OrderBO;
 import com.devstack.pos.bo.custom.ProductBO;
+import com.devstack.pos.dto.request.RequestOrderDTO;
+import com.devstack.pos.dto.request.RequestOrderDetailDTO;
 import com.devstack.pos.dto.response.ResponseCustomerDTO;
 import com.devstack.pos.dto.response.ResponseProductDTO;
 import com.devstack.pos.util.BoType;
@@ -18,6 +20,8 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class PlaceOrderFormController {
@@ -44,7 +48,7 @@ public class PlaceOrderFormController {
     private final OrderBO orderBO = BOFactory.getInstance().getBo(BoType.ORDER);
     private final CustomerBO customerBO = BOFactory.getInstance().getBo(BoType.CUSTOMER);
     private final ProductBO productBO = BOFactory.getInstance().getBo(BoType.PRODUCT);
-
+    private int orderId;
     private double fullTotal = 0;
 
     public void initialize() {
@@ -125,8 +129,8 @@ public class PlaceOrderFormController {
 
     private void setOrderId() {
         try {
-            int lastOrderId = orderBO.findLastOrderId();
-            lblHeader.setText("Place Order (Order Id: #" + ++lastOrderId + ")");
+            orderId = orderBO.findLastOrderId()+1;
+            lblHeader.setText("Place Order (Order Id: #" + orderId + ")");
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -136,6 +140,7 @@ public class PlaceOrderFormController {
     }
 
     public void newOrderOnAction(ActionEvent actionEvent) {
+        clearAllFields();
     }
 
     public void addToCartOnAction(ActionEvent actionEvent) {
@@ -193,6 +198,53 @@ public class PlaceOrderFormController {
 
     }
 
-    public void placeOrderOnAction(ActionEvent actionEvent) {
+    public void placeOrderOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
+        if(orderId==0){
+            new Alert(Alert.AlertType.WARNING, "Try Again").show();
+            return;
+        }
+        RequestOrderDTO dto = new  RequestOrderDTO();
+        List<RequestOrderDetailDTO> orderDetailDTOList = new ArrayList<>();
+
+        for (CartTM tm : tblProducts.getItems()) {
+            orderDetailDTOList.add(
+                    new RequestOrderDetailDTO(
+                            tm.getId(), tm.getUnitPrice(),tm.getQty()
+                    )
+            );
+        }
+        dto.setOrderId(orderId);
+        dto.setCustomerId(cmbCustomerIds.getValue());
+        dto.setOrderDetailDTOList(orderDetailDTOList);
+        dto.setDate(new Date());
+        dto.setTotalCost(fullTotal);
+        boolean isSavedOrder = orderBO.createOrder(dto);
+        if (isSavedOrder) {
+            setOrderId();
+            clearAllFields();
+            printBill();
+            new Alert(Alert.AlertType.INFORMATION, "Order Completed!..").show();
+        }
+    }
+
+    private void printBill() {
+        // to be implemented...
+    }
+
+    private void clearAllFields() {
+        cmbCustomerIds.setValue(null);
+        txtName.clear();
+        txtAddress.clear();
+        txtSalary.clear();
+
+        txtDescription.clear();
+        txtQtyOnHand.clear();
+        txtUnitPrice.clear();
+        txtProductCodes.clear();
+
+        fullTotal=0;
+
+        txtProductCodes.requestFocus();
+        tms.clear();
     }
 }
