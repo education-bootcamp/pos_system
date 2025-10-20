@@ -14,11 +14,16 @@ import com.google.zxing.WriterException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -136,7 +141,8 @@ public class PlaceOrderFormController {
         }
     }
 
-    public void backToWindowOnAction(ActionEvent actionEvent) {
+    public void backToWindowOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("DashboardForm");
     }
 
     public void newOrderOnAction(ActionEvent actionEvent) {
@@ -246,5 +252,14 @@ public class PlaceOrderFormController {
 
         txtProductCodes.requestFocus();
         tms.clear();
+    }
+
+    private void setUi(String location) throws IOException {
+        URL resource = getClass().getResource("/com/devstack/pos/view/" + location + ".fxml");
+        Parent load = FXMLLoader.load(resource);
+        Stage stage = (Stage) context.getScene().getWindow();
+        stage.setScene(
+                new Scene(load)
+        );
     }
 }

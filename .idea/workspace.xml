@@ -4,22 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="12">
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDetailsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDetailsDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dto/request/RequestOrderDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dto/request/RequestOrderDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/entity/OrderDetail.java" afterDir="false" />
+    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="13">
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/OrderDetailBO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/OrderDetailBOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/OrderDetailsFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/OrderHistoryFormController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dto/response/ResponseOrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/dto/response/ResponseOrderDetailsDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/OrderDetailsForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/OrderHistoryForm.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/tm/OrderDetailTM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/tm/OrderTM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/BOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/BOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/OrderBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/OrderBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/OrderBOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/bo/custom/impl/OrderBOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/controller/DashboardFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/DashboardFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/DaoFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDetailsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/OrderDetailsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/ProductDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/util/DaoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/util/DaoType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDetailsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/dao/custom/impl/OrderDetailsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/util/BoType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/util/BoType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/view/DashboardForm.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/view/DashboardForm.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +55,12 @@
     &quot;assignee&quot;: &quot;education-bootcamp&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/education-bootcamp/pos_system.git",
-    "accountId": "19a54e3d-50f6-4eff-ad00-f6a08f6f9b0d"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/education-bootcamp/pos_system.git&quot;,
+    &quot;accountId&quot;: &quot;19a54e3d-50f6-4eff-ad00-f6a08f6f9b0d&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -63,44 +72,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AppInitializer.executor": "Run",
-    "Application.UserDaoImplTest.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/devstack/Desktop/DSMP/Batch-6/pos-system/pos-system/lib/auto-complete/javafx-autocomplete-textfield-1.1.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AppInitializer.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/devstack/Desktop/DSMP/Batch-6/pos-system/pos-system/lib/auto-complete/javafx-autocomplete-textfield-1.1.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "mysql_aurora"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mysql_aurora&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.devstack.pos.dao.custom.impl" />
       <recent name="com.devstack.pos.bo.custom.impl" />
+      <recent name="com.devstack.pos.dao.custom.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/auto-complete" />
@@ -175,7 +184,8 @@
       <workItem from="1760474842972" duration="54000" />
       <workItem from="1760518206349" duration="6295000" />
       <workItem from="1760929125119" duration="12248000" />
-      <workItem from="1760983878912" duration="6328000" />
+      <workItem from="1760983878912" duration="8911000" />
+      <workItem from="1760993590167" duration="3162000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -305,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760987272854</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="13">
+      <option name="closed" value="true" />
+      <created>1760990472746</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1760990472746</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +353,8 @@
     <MESSAGE value="10" />
     <MESSAGE value="11" />
     <MESSAGE value="12" />
-    <option name="LAST_COMMIT_MESSAGE" value="12" />
+    <MESSAGE value="13" />
+    <option name="LAST_COMMIT_MESSAGE" value="13" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

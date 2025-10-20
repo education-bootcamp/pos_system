@@ -7,6 +7,8 @@ import com.devstack.pos.entity.Order;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderDaoImpl implements OrderDao {
@@ -26,6 +28,25 @@ public class OrderDaoImpl implements OrderDao {
     }
 
     @Override
+    public List<Order> getOrderHistory(LocalDate date) throws SQLException, ClassNotFoundException {
+        System.out.println(date);
+        ResultSet set = CrudUtil.execute(
+                "SELECT * FROM orders WHERE DATE(date) = ? ORDER BY date DESC",
+                date
+        );
+        List<Order> list = new ArrayList<>();
+        while (set.next()){
+            list.add(
+                    new Order(
+                            set.getInt(1),
+                            set.getString(2),set.getDouble(3),set.getDate(4)
+                    )
+            );
+        }
+        return list;
+    }
+
+    @Override
     public boolean save(Order order) throws SQLException, ClassNotFoundException {
         return false;
     }
@@ -42,6 +63,13 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public Order findById(Integer integer) throws SQLException, ClassNotFoundException {
+        ResultSet set = CrudUtil.execute("SELECT * FROM orders WHERE order_id = ?", integer);
+        if (set.next()) {
+            return new Order(
+                    set.getInt(1),
+                    set.getString(2),set.getDouble(3),set.getDate(4)
+            );
+        }
         return null;
     }
 

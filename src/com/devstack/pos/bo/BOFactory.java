@@ -1,9 +1,6 @@
 package com.devstack.pos.bo;
 
-import com.devstack.pos.bo.custom.impl.CustomerBOImpl;
-import com.devstack.pos.bo.custom.impl.OrderBOImpl;
-import com.devstack.pos.bo.custom.impl.ProductBOImpl;
-import com.devstack.pos.bo.custom.impl.UserBoImpl;
+import com.devstack.pos.bo.custom.impl.*;
 import com.devstack.pos.dao.custom.impl.UserDaoImpl;
 import com.devstack.pos.util.BoType;
 
@@ -32,6 +29,8 @@ public class BOFactory {
                 return (T) new ProductBOImpl();
             case ORDER:
                 return (T) new OrderBOImpl();
+            case ORDER_DETAIL:
+                return (T) new OrderDetailBOImpl();
             default:
                 return null;
         }

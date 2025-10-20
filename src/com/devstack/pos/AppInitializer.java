@@ -21,7 +21,7 @@ public class AppInitializer extends Application {
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
         primaryStage.setScene(scene);
-        primaryStage.setAlwaysOnTop(true);
+        //primaryStage.setAlwaysOnTop(true);
         primaryStage.setTitle("POS SYSTEM");
         primaryStage.show();
     }
