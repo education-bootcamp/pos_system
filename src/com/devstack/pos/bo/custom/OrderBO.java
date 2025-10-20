@@ -2,6 +2,7 @@ package com.devstack.pos.bo.custom;
 
 import com.devstack.pos.dto.request.RequestOrderDTO;
 import com.devstack.pos.dto.response.ResponseOrderDTO;
+import com.devstack.pos.dto.response.StatisticsResponseDTO;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -12,4 +13,5 @@ public interface OrderBO {
     public boolean createOrder(RequestOrderDTO dto) throws SQLException, ClassNotFoundException;
     public List<ResponseOrderDTO> getOrderHistory(LocalDate date) throws SQLException, ClassNotFoundException;
     public ResponseOrderDTO findOrderById(int orderId) throws SQLException, ClassNotFoundException;
+    public List<StatisticsResponseDTO> loadStatistics(LocalDate from, LocalDate to) throws SQLException, ClassNotFoundException;
 }

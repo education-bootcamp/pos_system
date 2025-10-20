@@ -3,6 +3,7 @@ package com.devstack.pos.dao.custom.impl;
 import com.devstack.pos.dao.CrudUtil;
 import com.devstack.pos.dao.custom.OrderDao;
 import com.devstack.pos.dto.request.RequestOrderDTO;
+import com.devstack.pos.dto.response.StatisticsResponseDTO;
 import com.devstack.pos.entity.Order;
 
 import java.sql.ResultSet;
@@ -42,6 +43,19 @@ public class OrderDaoImpl implements OrderDao {
                             set.getString(2),set.getDouble(3),set.getDate(4)
                     )
             );
+        }
+        return list;
+    }
+
+    @Override
+    public List<StatisticsResponseDTO> getStatistics(LocalDate from, LocalDate to) throws SQLException, ClassNotFoundException {
+        ResultSet execute = CrudUtil.execute("SELECT DATE(date) AS order_date, SUM(total_cost) AS total_sales FROM orders WHERE date BETWEEN ? AND ? GROUP BY DATE(date) ORDER BY DATE(date)", from + " 00:00:00", to + " 23:59:59");
+        List<StatisticsResponseDTO> list = new ArrayList<>();
+        while (execute.next()) {
+            list.add(new StatisticsResponseDTO(
+                    execute.getString("order_date"),
+                    execute.getDouble("total_sales")
+            ));
         }
         return list;
     }

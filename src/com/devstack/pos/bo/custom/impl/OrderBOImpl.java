@@ -11,6 +11,7 @@ import com.devstack.pos.db.DbConnection;
 import com.devstack.pos.dto.request.RequestOrderDTO;
 import com.devstack.pos.dto.request.RequestOrderDetailDTO;
 import com.devstack.pos.dto.response.ResponseOrderDTO;
+import com.devstack.pos.dto.response.StatisticsResponseDTO;
 import com.devstack.pos.entity.Customer;
 import com.devstack.pos.entity.Order;
 import com.devstack.pos.entity.OrderDetail;
@@ -90,5 +91,10 @@ public class OrderBOImpl implements OrderBO {
             );
         }
         return null;
+    }
+
+    @Override
+    public List<StatisticsResponseDTO> loadStatistics(LocalDate from, LocalDate to) throws SQLException, ClassNotFoundException {
+        return orderDao.getStatistics(from, to);
     }
 }
