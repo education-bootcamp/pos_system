@@ -37,10 +37,30 @@ public class LoginFormController {
     }
 
     public void loginOnAction(ActionEvent actionEvent) throws IOException {
+
+        String email = txtEmail.getText().trim();
+        String password = txtPassword.getText();
+
+        // --- Validation ---
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+
+        if (email.isEmpty() || password.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Email and Password are required!").show();
+            return;
+        }
+
+        if (!email.matches(emailRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid email format!").show();
+            return;
+        }
+
+        if (password.length() < 6) {
+            new Alert(Alert.AlertType.WARNING, "Password must be at least 6 characters long!").show();
+            return;
+        }
+
         try{
-            ResponseUserDTO loginData = userBo.loginUser(
-                    txtEmail.getText().trim(), txtPassword.getText()
-            );
+            ResponseUserDTO loginData = userBo.loginUser(email, password);
             if(loginData.isStatus()){
                 new Alert(Alert.AlertType.INFORMATION,loginData.getMsg()).show();
                 SystemVariables.responseUserDTO=loginData;

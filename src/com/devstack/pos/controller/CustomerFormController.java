@@ -71,37 +71,62 @@ public class CustomerFormController {
     }
 
     public void saveUpdateOnAction(ActionEvent actionEvent) {
+        String name = txtName.getText().trim();
+        String address = txtAddress.getText().trim();
+        String salaryText = txtSalary.getText().trim();
+
+        // Regex patterns
+        String nameRegex = "^[A-Za-z ]{3,}$"; // At least 3 letters, spaces allowed
+        String addressRegex = "^[A-Za-z0-9 ,.-/]{5,}$"; // Letters, numbers, and basic punctuation
+        String salaryRegex = "^[0-9]+(\\.[0-9]{1,2})?$"; // e.g. 1000 or 1000.50
+
+        // --- Validation ---
+        if (name.isEmpty() || address.isEmpty() || salaryText.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "All fields are required!").show();
+            return;
+        }
+
+        if (!name.matches(nameRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid name! Use letters only (min 3 characters).").show();
+            return;
+        }
+
+        if (!address.matches(addressRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid address! Minimum 5 characters.").show();
+            return;
+        }
+
+        if (!salaryText.matches(salaryRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid salary format! Example: 50000 or 50000.75").show();
+            return;
+        }
+
+        double salary = Double.parseDouble(salaryText);
+        if (salary <= 0) {
+            new Alert(Alert.AlertType.WARNING, "Salary must be greater than 0!").show();
+            return;
+        }
+
+        // --- Save or Update ---
         if (btnSave.getText().equalsIgnoreCase("Save Customer")) {
             try {
-                customerBO.saveCustomer(
-                        new RequestCustomerDTO(
-                                txtName.getText().trim(), txtAddress.getText().trim(), Double.parseDouble(txtSalary.getText())
-                        )
-                );
-
+                customerBO.saveCustomer(new RequestCustomerDTO(name, address, salary));
                 new Alert(Alert.AlertType.INFORMATION, "Customer Saved Successfully", ButtonType.OK).show();
-
                 searchAll();
                 clearAll();
-
             } catch (SQLException | ClassNotFoundException e) {
                 new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage(), ButtonType.OK).show();
             }
         } else {
             if (selectedCustomerId == null) {
-                new Alert(Alert.AlertType.WARNING, "Please Select the customer").show();
+                new Alert(Alert.AlertType.WARNING, "Please select a customer to update!").show();
                 return;
             }
             try {
-                customerBO.updateCustomer(
-                        new RequestCustomerDTO(
-                                txtName.getText().trim(), txtAddress.getText().trim(), Double.parseDouble(txtSalary.getText())
-                        ), selectedCustomerId
-                );
+                customerBO.updateCustomer(new RequestCustomerDTO(name, address, salary), selectedCustomerId);
                 new Alert(Alert.AlertType.INFORMATION, "Customer Updated Successfully", ButtonType.OK).show();
                 searchAll();
                 clearAll();
-
             } catch (SQLException | ClassNotFoundException e) {
                 new Alert(Alert.AlertType.ERROR, "Error: " + e.getMessage(), ButtonType.OK).show();
             }

@@ -78,11 +78,46 @@ public class ProductController {
 
     public void saveUpdateOnAction(ActionEvent actionEvent) {
         if (btnSaveUpdate.getText().equalsIgnoreCase("Save Product")) {
-            RequestProductDTO dto = new RequestProductDTO(
-                    txtDescription.getText(),
-                    Double.parseDouble(txtUnitPrice.getText()),
-                    Integer.parseInt(txtQtyOnHand.getText())
-            );
+            String description = txtDescription.getText().trim();
+            String unitPriceText = txtUnitPrice.getText().trim();
+            String qtyText = txtQtyOnHand.getText().trim();
+
+            // Regex patterns
+            String priceRegex = "^[0-9]+(\\.[0-9]{1,2})?$"; // allows 123 or 123.45
+            String qtyRegex = "^[0-9]+$"; // only digits
+
+            // ---- Validation ----
+            if (description.isEmpty() || unitPriceText.isEmpty() || qtyText.isEmpty()) {
+                new Alert(Alert.AlertType.WARNING, "All fields are required!").show();
+                return;
+            }
+
+            if (!unitPriceText.matches(priceRegex)) {
+                new Alert(Alert.AlertType.WARNING, "Invalid unit price! Use a valid number (e.g., 12.50)").show();
+                return;
+            }
+
+            if (!qtyText.matches(qtyRegex)) {
+                new Alert(Alert.AlertType.WARNING, "Quantity must be a whole number!").show();
+                return;
+            }
+
+            double unitPrice = Double.parseDouble(unitPriceText);
+            int qty = Integer.parseInt(qtyText);
+
+            if (unitPrice <= 0) {
+                new Alert(Alert.AlertType.WARNING, "Unit price must be greater than 0!").show();
+                return;
+            }
+
+            if (qty < 0) {
+                new Alert(Alert.AlertType.WARNING, "Quantity cannot be negative!").show();
+                return;
+            }
+
+            // ---- If validation passes ----
+            RequestProductDTO dto = new RequestProductDTO(description, unitPrice, qty);
+
             try {
                 boolean isSaved = bo.createProduct(dto);
                 if (isSaved) {

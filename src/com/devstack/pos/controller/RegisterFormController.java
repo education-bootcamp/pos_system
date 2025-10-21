@@ -37,12 +37,39 @@ public class RegisterFormController {
     }
 
     public void RegisterOnAction(ActionEvent actionEvent) throws IOException {
-        RequestUserDTO user = new RequestUserDTO(
-                txtEmail.getText().trim(),
-                txtDisplayName.getText().trim(),
-                txtContactNumber.getText().trim(),
-                txtPassword.getText()
-        );
+
+        // Basic input validation
+        String email = txtEmail.getText().trim();
+        String name = txtDisplayName.getText().trim();
+        String contact = txtContactNumber.getText().trim();
+        String password = txtPassword.getText();
+
+        // Regex patterns
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        String contactRegex = "^[0-9]{10}$"; // Adjust if your contact number format differs
+
+        if (email.isEmpty() || name.isEmpty() || contact.isEmpty() || password.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "All fields are required!").show();
+            return;
+        }
+
+        if (!email.matches(emailRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid email address!").show();
+            return;
+        }
+
+        if (!contact.matches(contactRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid contact number! Must be 10 digits.").show();
+            return;
+        }
+
+        if (password.length() < 6) {
+            new Alert(Alert.AlertType.WARNING, "Password must be at least 6 characters long!").show();
+            return;
+        }
+
+
+        RequestUserDTO user = new RequestUserDTO(email, name, contact, password);
         try{
             boolean isSaved = userBo.registerUser(user);
             if(isSaved){

@@ -150,20 +150,55 @@ public class PlaceOrderFormController {
     }
 
     public void addToCartOnAction(ActionEvent actionEvent) {
-        int qty = Integer.parseInt(txtQty.getText());
-        int qtyOnHand = Integer.parseInt(txtQtyOnHand.getText());
+        String productId = txtProductCodes.getText().trim();
+        String qtyText = txtQty.getText().trim();
+        String qtyOnHandText = txtQtyOnHand.getText().trim();
+        String unitPriceText = txtUnitPrice.getText().trim();
+        String description = txtDescription.getText().trim();
 
-        if (qtyOnHand < qty) {
-            new Alert(Alert.AlertType.WARNING, "please fill the stock").show();
+        // Regex patterns
+        String qtyRegex = "^[0-9]+$";
+        String priceRegex = "^[0-9]+(\\.[0-9]{1,2})?$";
+
+        // --- Field validations ---
+        if (productId.isEmpty() || description.isEmpty() || qtyText.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please fill all fields before adding to cart!").show();
             return;
         }
 
-        double unitPrice = Double.parseDouble(txtUnitPrice.getText());
-        Button btn = new Button("Remove");
+        if (!qtyText.matches(qtyRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid quantity! Must be a positive whole number.").show();
+            return;
+        }
 
-        CartTM tm = new CartTM(txtProductCodes.getText(),
-                txtDescription.getText(),
-                unitPrice, qty, unitPrice * qty, btn);
+        if (!unitPriceText.matches(priceRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid unit price format!").show();
+            return;
+        }
+
+        if (!qtyOnHandText.matches(qtyRegex)) {
+            new Alert(Alert.AlertType.WARNING, "Invalid stock quantity format!").show();
+            return;
+        }
+
+        int qty = Integer.parseInt(qtyText);
+        int qtyOnHand = Integer.parseInt(qtyOnHandText);
+        double unitPrice = Double.parseDouble(unitPriceText);
+
+        if (qty <= 0) {
+            new Alert(Alert.AlertType.WARNING, "Quantity must be greater than 0!").show();
+            return;
+        }
+
+        if (qty > qtyOnHand) {
+            new Alert(Alert.AlertType.WARNING, "Insufficient stock available!").show();
+            return;
+        }
+
+        // --- Create CartTM ---
+        Button btn = new Button("Remove");
+        CartTM tm = new CartTM(productId, description, unitPrice, qty, unitPrice * qty, btn);
+
 
         btn.setOnAction(e -> {
             for (CartTM t : tms){
@@ -205,11 +240,23 @@ public class PlaceOrderFormController {
     }
 
     public void placeOrderOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        if(orderId==0){
-            new Alert(Alert.AlertType.WARNING, "Try Again").show();
+        if (orderId == 0) {
+            new Alert(Alert.AlertType.WARNING, "Order ID not initialized. Please try again!").show();
             return;
         }
-        RequestOrderDTO dto = new  RequestOrderDTO();
+
+        if (cmbCustomerIds.getValue() == null || cmbCustomerIds.getValue().trim().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Please select a customer before placing the order!").show();
+            return;
+        }
+
+        if (tms.isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "Your cart is empty! Please add products first.").show();
+            return;
+        }
+
+        // Build the order DTO
+        RequestOrderDTO dto = new RequestOrderDTO();
         List<RequestOrderDetailDTO> orderDetailDTOList = new ArrayList<>();
 
         for (CartTM tm : tblProducts.getItems()) {
