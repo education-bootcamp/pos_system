@@ -23,12 +23,12 @@
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <TextField fx:id="txtEmail" layoutX="14.0" layoutY="188.0" prefHeight="37.0" prefWidth="378.0" promptText="Root Email" text="abc@gmail.com">
+      <TextField fx:id="txtEmail" layoutX="14.0" layoutY="188.0" prefHeight="37.0" prefWidth="378.0" promptText="Root Email">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="txtPassword" layoutX="14.0" layoutY="238.0" prefHeight="37.0" prefWidth="324.0" promptText="Password" text="1234">
+      <PasswordField fx:id="txtPassword" layoutX="14.0" layoutY="238.0" prefHeight="37.0" prefWidth="324.0" promptText="Password">
          <font>
             <Font size="15.0" />
          </font>

@@ -15,13 +15,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.print.*;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -147,6 +152,7 @@ public class PlaceOrderFormController {
 
     public void newOrderOnAction(ActionEvent actionEvent) {
         clearAllFields();
+        tms.clear();
     }
 
     public void addToCartOnAction(ActionEvent actionEvent) {
@@ -280,10 +286,6 @@ public class PlaceOrderFormController {
         }
     }
 
-    private void printBill() {
-        // to be implemented...
-    }
-
     private void clearAllFields() {
         cmbCustomerIds.setValue(null);
         txtName.clear();
@@ -298,7 +300,6 @@ public class PlaceOrderFormController {
         fullTotal=0;
 
         txtProductCodes.requestFocus();
-        tms.clear();
     }
 
     private void setUi(String location) throws IOException {
@@ -308,5 +309,63 @@ public class PlaceOrderFormController {
         stage.setScene(
                 new Scene(load)
         );
+    }
+
+    private void printBill() {
+        if (tms.isEmpty()) return;
+
+        VBox billPane = new VBox(5);
+        billPane.setPadding(new Insets(10));
+
+        billPane.getChildren().addAll(
+                new Label("POS SYSTEM BILL"),
+                new Label("Order ID: #" + orderId),
+                new Label("Customer: " + txtName.getText()),
+                new Label("Date: " + new Date()),
+                new Label("------------------------------------------------")
+        );
+
+        for (CartTM item : tms) {
+            billPane.getChildren().add(new Label(
+                    item.getDescription() + " | Qty: " + item.getQty() +
+                            " | Unit: " + String.format("%.2f", item.getUnitPrice()) +
+                            " | Total: " + String.format("%.2f", item.getTotal())
+            ));
+        }
+        billPane.getChildren().addAll(new Label("------------------------------------------------"),
+                new Label("TOTAL: " + String.format("%.2f", fullTotal)));
+
+        // Use default printer / PDF printer
+        Printer pdfPrinter = null;
+        for (Printer p : Printer.getAllPrinters()) {
+            if (p.getName().toLowerCase().contains("pdf")) {
+                pdfPrinter = p;
+                break;
+            }
+        }
+
+        if (pdfPrinter == null) {
+            new Alert(Alert.AlertType.ERROR, "No PDF printer found!").show();
+        }
+
+        PrinterJob job = PrinterJob.createPrinterJob();
+        if (job != null) {
+            job.setPrinter(pdfPrinter);
+
+            PageLayout pageLayout = pdfPrinter.createPageLayout(Paper.A4, PageOrientation.PORTRAIT, Printer.MarginType.DEFAULT);
+            job.getJobSettings().setPageLayout(pageLayout);
+
+            // Automatically save PDF to desktop with order ID
+            job.getJobSettings().setJobName("Order_" + orderId + ".pdf");
+
+            if (job.printPage(billPane)) {
+                job.endJob();
+                new Alert(Alert.AlertType.INFORMATION, "Bill saved as PDF successfully!").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Failed to save PDF!").show();
+            }
+        }
+
+        tms.clear();
     }
 }
