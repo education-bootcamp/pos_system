@@ -1,0 +1,51 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="pos-system:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/pos_system_jar</output-path>
+    <root id="archive" name="pos-system.jar">
+      <element id="module-output" name="pos-system" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/fx/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/zxing/core-3.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/auto-complete/javafx-autocomplete-textfield-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/bcrypt/jbcrypt-0.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/mysql/mysql-connector-j-8.0.31.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx-swt.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.base.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.controls.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.fxml.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.graphics.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.media.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.properties" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.swing.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/javafx.web.jar" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-54.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-56.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-57.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-ffmpeg-56.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-ffmpeg-57.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-ffmpeg-58.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libavplugin-ffmpeg-59.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libdecora_sse.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libfxplugins.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libglass.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libglassgtk2.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libglassgtk3.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libgstreamer-lite.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libjavafx_font.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libjavafx_font_freetype.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libjavafx_font_pango.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libjavafx_iio.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libjfxmedia.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libjfxwebkit.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libprism_common.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libprism_es2.so" />
+      <element id="file-copy" path="$PROJECT_DIR$/../lib/fx/libprism_sw.so" />
+    </root>
+  </artifact>
+</component>

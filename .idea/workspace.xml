@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="pos-system:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="17">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ac40eac-bd6f-434e-81d9-2eacd37b46eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ac40eac-bd6f-434e-81d9-2eacd37b46eb.xml" afterDir="false" />
+    <list default="true" id="70f48882-3c46-40ae-a3f0-c1c043f75302" name="Changes" comment="18">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/pos_system_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javase_3_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/devstack/pos/controller/PlaceOrderFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/zxing/javase-3.3.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pos-system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pos-system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,13 +75,13 @@
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/devstack/Desktop/DSMP/Batch-6/pos-system/pos-system",
+    "last_opened_file_path": "/home/devstack/Desktop/DSMP/Batch-6/pos-system/lib/fx/libprism_sw.so",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default",
@@ -170,7 +179,7 @@
       <workItem from="1761018009661" duration="225000" />
       <workItem from="1761019173529" duration="1113000" />
       <workItem from="1761020481309" duration="669000" />
-      <workItem from="1761027349308" duration="778000" />
+      <workItem from="1761027349308" duration="2892000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -340,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761020278712</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="18">
+      <option name="closed" value="true" />
+      <created>1761028371733</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1761028371734</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +392,8 @@
     <MESSAGE value="15" />
     <MESSAGE value="16" />
     <MESSAGE value="17" />
-    <option name="LAST_COMMIT_MESSAGE" value="17" />
+    <MESSAGE value="18" />
+    <option name="LAST_COMMIT_MESSAGE" value="18" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
